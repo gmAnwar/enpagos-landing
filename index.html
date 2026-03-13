@@ -549,6 +549,33 @@ footer a { color: rgba(255,255,255,.5); }
   .campo-row { grid-template-columns: 1fr; }
 }
 
+
+/* ─── CIUDADES ─── */
+.ciudades-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--borde);
+  padding: 16px 80px;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.ciudades-label {
+  font-family: 'Sora', sans-serif; font-weight: 700;
+  font-size: .78rem; color: var(--azul);
+  white-space: nowrap;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.ciudades-lista {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.ciudad-chip {
+  background: var(--gris-claro); border: 1px solid var(--borde);
+  border-radius: 50px; padding: 4px 14px;
+  font-size: .8rem; color: var(--gris-texto); font-weight: 500;
+}
+@media (max-width: 900px) {
+  .ciudades-bar { padding: 14px 20px; gap: 10px; }
+}
+
 /* ─── SCROLL ANIMATIONS ─── */
 .reveal {
   opacity: 0; transform: translateY(24px);
@@ -592,7 +619,7 @@ footer a { color: rgba(255,255,255,.5); }
     </p>
     <div class="hero-pills">
       <div class="pill"><span>✓</span> Pagas cuando recibes el equipo</div>
-      <div class="pill"><span>✓</span> Entrega en tu local</div>
+      <div class="pill"><span>✓</span> Entrega en 7 a 10 días</div>
       <div class="pill"><span>✓</span> Plazo hasta 60 meses</div>
       <div class="pill"><span>✓</span> Abonos semanales</div>
     </div>
@@ -651,6 +678,24 @@ footer a { color: rgba(255,255,255,.5); }
   </div>
 </div>
 
+<!-- CIUDADES -->
+<div class="ciudades-bar">
+  <span class="ciudades-label">Disponible en:</span>
+  <div class="ciudades-lista">
+    <span class="ciudad-chip">Monterrey</span>
+    <span class="ciudad-chip">Saltillo</span>
+    <span class="ciudad-chip">Torreón</span>
+    <span class="ciudad-chip">Guadalajara</span>
+    <span class="ciudad-chip">Querétaro</span>
+    <span class="ciudad-chip">Aguascalientes</span>
+    <span class="ciudad-chip">León</span>
+    <span class="ciudad-chip">Irapuato</span>
+    <span class="ciudad-chip">Guanajuato</span>
+    <span class="ciudad-chip">San Luis Potosí</span>
+    <span class="ciudad-chip">San Miguel de Allende</span>
+  </div>
+</div>
+
 <!-- CÓMO FUNCIONA -->
 <section class="como" id="como">
   <div class="reveal">
@@ -672,7 +717,7 @@ footer a { color: rgba(255,255,255,.5); }
     <div class="paso">
       <div class="paso-num">3</div>
       <div class="paso-titulo">Recibe tu equipo</div>
-      <p class="paso-texto">Entregamos en tu negocio. Pagas el anticipo al recibir, los abonos arrancan después.</p>
+      <p class="paso-texto">Entregamos en la puerta de tu negocio en 7 a 10 días. Pagas el anticipo al recibir, los abonos arrancan después.</p>
     </div>
   </div>
 </section>
@@ -730,7 +775,11 @@ footer a { color: rgba(255,255,255,.5); }
           <div class="progress-line" id="line-3"></div>
         </div>
         <div class="progress-step">
-          <div class="progress-dot" id="dot-4">✓</div>
+          <div class="progress-dot" id="dot-4">4</div>
+          <div class="progress-line" id="line-4"></div>
+        </div>
+        <div class="progress-step">
+          <div class="progress-dot" id="dot-5">✓</div>
         </div>
       </div>
 
@@ -739,29 +788,33 @@ footer a { color: rgba(255,255,255,.5); }
         <div class="step-titulo">¿Qué tipo de negocio tienes?</div>
         <div class="step-sub">Selecciona la opción que mejor describe tu negocio.</div>
         <div class="opciones-grid">
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Abarrotes / Miscelánea')">
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Tienda de abarrotes')">
             <span class="opcion-icon">🏪</span>
-            <span class="opcion-label">Abarrotes / Miscelánea</span>
+            <span class="opcion-label">Tienda de abarrotes</span>
           </button>
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Carnicería / Cremería')">
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Carnicería')">
             <span class="opcion-icon">🥩</span>
-            <span class="opcion-label">Carnicería / Cremería</span>
+            <span class="opcion-label">Carnicería</span>
           </button>
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Restaurante / Fonda')">
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Depósito de cerveza')">
+            <span class="opcion-icon">🍺</span>
+            <span class="opcion-label">Depósito de cerveza</span>
+          </button>
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Restaurante')">
             <span class="opcion-icon">🍽️</span>
-            <span class="opcion-label">Restaurante / Fonda</span>
+            <span class="opcion-label">Restaurante</span>
           </button>
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Panadería / Pastelería')">
-            <span class="opcion-icon">🥐</span>
-            <span class="opcion-label">Panadería / Pastelería</span>
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Cremería')">
+            <span class="opcion-icon">🧀</span>
+            <span class="opcion-label">Cremería</span>
           </button>
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Tortillería')">
-            <span class="opcion-icon">🫓</span>
-            <span class="opcion-label">Tortillería</span>
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Frutería')">
+            <span class="opcion-icon">🍎</span>
+            <span class="opcion-label">Frutería</span>
           </button>
-          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Otro negocio')">
+          <button class="opcion-card" onclick="selectOpcion(this, 'negocio', 'Otro')">
             <span class="opcion-icon">🏢</span>
-            <span class="opcion-label">Otro negocio</span>
+            <span class="opcion-label">Otro</span>
           </button>
         </div>
         <button class="btn-siguiente" id="btn-step1" onclick="goToStep(2)" disabled>
@@ -769,29 +822,38 @@ footer a { color: rgba(255,255,255,.5); }
         </button>
       </div>
 
-      <!-- PASO 2: Ventas mensuales -->
+      <!-- PASO 2: Tiempo en el negocio -->
       <div class="step-panel" id="step-2">
-        <div class="step-titulo">¿Cuánto vende tu negocio al mes?</div>
-        <div class="step-sub">Aproximado. Esto nos ayuda a encontrar el plan de pagos ideal para ti.</div>
+        <div class="step-titulo">¿Cuánto tiempo llevas con tu negocio?</div>
+        <div class="step-sub">Esto nos ayuda a encontrar el plan ideal para ti.</div>
         <div class="opciones-ventas">
-          <button class="opcion-venta" onclick="selectVenta(this, 'menos50')">
+          <button class="opcion-venta" onclick="selectVenta(this, 'empezando')">
             <div>
-              <div class="opcion-venta-label">Menos de $50,000</div>
-              <div class="opcion-venta-sub">Negocio en crecimiento</div>
+              <div class="opcion-venta-label">Apenas voy a empezar</div>
             </div>
             <div class="opcion-check"></div>
           </button>
-          <button class="opcion-venta" onclick="selectVenta(this, 'entre50y150')">
+          <button class="opcion-venta" onclick="selectVenta(this, 'menos6m')">
             <div>
-              <div class="opcion-venta-label">Entre $50,000 y $150,000</div>
-              <div class="opcion-venta-sub">Negocio consolidado</div>
+              <div class="opcion-venta-label">Menos de 6 meses</div>
             </div>
             <div class="opcion-check"></div>
           </button>
-          <button class="opcion-venta" onclick="selectVenta(this, 'mas150')">
+          <button class="opcion-venta" onclick="selectVenta(this, '6m1a')">
             <div>
-              <div class="opcion-venta-label">Más de $150,000</div>
-              <div class="opcion-venta-sub">Negocio establecido — perfil ideal ✓</div>
+              <div class="opcion-venta-label">Entre 6 meses y 1 año</div>
+            </div>
+            <div class="opcion-check"></div>
+          </button>
+          <button class="opcion-venta" onclick="selectVenta(this, '1a3a')">
+            <div>
+              <div class="opcion-venta-label">1 a 3 años</div>
+            </div>
+            <div class="opcion-check"></div>
+          </button>
+          <button class="opcion-venta" onclick="selectVenta(this, 'mas4a')">
+            <div>
+              <div class="opcion-venta-label">Más de 4 años</div>
             </div>
             <div class="opcion-check"></div>
           </button>
@@ -802,34 +864,80 @@ footer a { color: rgba(255,255,255,.5); }
         <button class="btn-back" onclick="goToStep(1)">← Regresar</button>
       </div>
 
-      <!-- PASO 3: Ciudad -->
+      <!-- PASO 3: Equipo -->
       <div class="step-panel" id="step-3">
+        <div class="step-titulo">¿Qué equipo estás buscando?</div>
+        <div class="step-sub">Puedes elegir más de uno.</div>
+        <div class="opciones-grid">
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Vitrina carnicera')">
+            <span class="opcion-icon">🥩</span>
+            <span class="opcion-label">Vitrina carnicera</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Vitrina cremera')">
+            <span class="opcion-icon">🧀</span>
+            <span class="opcion-label">Vitrina cremera</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Enfriador')">
+            <span class="opcion-icon">🧊</span>
+            <span class="opcion-label">Enfriador</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Máquina de hielo')">
+            <span class="opcion-icon">❄️</span>
+            <span class="opcion-label">Máquina de hielo</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Congelador')">
+            <span class="opcion-icon">🔵</span>
+            <span class="opcion-label">Congelador</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Equipo de carnicería')">
+            <span class="opcion-icon">🔪</span>
+            <span class="opcion-label">Equipo de carnicería</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Equipo de panadería')">
+            <span class="opcion-icon">🥐</span>
+            <span class="opcion-label">Equipo de panadería</span>
+          </button>
+          <button class="opcion-card multi" onclick="toggleMulti(this, 'Otro equipo')">
+            <span class="opcion-icon">🏢</span>
+            <span class="opcion-label">Otro equipo</span>
+          </button>
+        </div>
+        <button class="btn-siguiente" id="btn-step3" onclick="goToStep(4)" disabled>
+          Siguiente →
+        </button>
+        <button class="btn-back" onclick="goToStep(2)">← Regresar</button>
+      </div>
+
+      <!-- PASO 4: Ciudad -->
+      <div class="step-panel" id="step-4">
         <div class="step-titulo">¿En qué ciudad está tu negocio?</div>
         <div class="step-sub">Solo operamos en ciudades con cobertura. Verifiquemos si llegamos a ti.</div>
         <div class="campo-wrap">
           <label class="campo-label" for="ciudad-select">Ciudad</label>
           <select class="campo-select" id="ciudad-select" onchange="checkCiudad(this)">
             <option value="">— Selecciona tu ciudad —</option>
-            <option value="monterrey">Monterrey, N.L.</option>
-            <option value="saltillo">Saltillo, Coah.</option>
-            <option value="torreon">Torreón, Coah.</option>
-            <option value="guadalajara">Guadalajara, Jal.</option>
-            <option value="guanajuato">Guanajuato, Gto.</option>
-            <option value="queretaro">Querétaro, Qro.</option>
-            <option value="aguascalientes">Aguascalientes, Ags.</option>
-            <option value="slp">San Luis Potosí, S.L.P.</option>
-            <option value="sanmiguel">San Miguel de Allende, Gto.</option>
+            <option value="monterrey">Monterrey — Área Metropolitana</option>
+            <option value="guadalajara">Guadalajara — Área Metropolitana</option>
+            <option value="saltillo">Saltillo</option>
+            <option value="torreon">Torreón — Comarca Lagunera</option>
+            <option value="queretaro">Querétaro — Área Metropolitana</option>
+            <option value="leon">León</option>
+            <option value="irapuato">Irapuato</option>
+            <option value="guanajuato">Guanajuato</option>
+            <option value="aguascalientes">Aguascalientes</option>
+            <option value="slp">San Luis Potosí</option>
+            <option value="sanmiguel">San Miguel de Allende</option>
             <option value="otra">Otra ciudad</option>
           </select>
         </div>
-        <button class="btn-siguiente" id="btn-step3" onclick="goToStep(4)" disabled>
+        <button class="btn-siguiente" id="btn-step4" onclick="goToStep(5)" disabled>
           Continuar →
         </button>
-        <button class="btn-back" onclick="goToStep(2)">← Regresar</button>
+        <button class="btn-back" onclick="goToStep(3)">← Regresar</button>
       </div>
 
-      <!-- PASO 4: Datos de contacto -->
-      <div class="step-panel" id="step-4">
+      <!-- PASO 5: Datos de contacto -->
+      <div class="step-panel" id="step-5">
         <div class="step-titulo">¡Tu negocio puede calificar! 🎉</div>
         <div class="step-sub">Déjanos tus datos y un asesor te llama en los próximos 30 minutos para darte tu plan de pagos.</div>
         <div class="campo-row">
@@ -855,6 +963,7 @@ footer a { color: rgba(255,255,255,.5); }
             <option>Otro equipo</option>
           </select>
         </div>
+        <button class="btn-back" onclick="goToStep(4)" style="margin-bottom:12px;">← Regresar</button>
         <button class="btn-siguiente" id="btn-enviar" onclick="enviarFormulario()" disabled>
           📞 Quiero que me llamen
         </button>
@@ -1038,16 +1147,29 @@ function goToStep(n) {
 }
 
 function updateProgress(current) {
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 5; i++) {
     const dot = document.getElementById('dot-' + i);
     const line = document.getElementById('line-' + i);
     if (!dot) continue;
     dot.classList.remove('active', 'done');
     if (i < current) { dot.classList.add('done'); dot.textContent = '✓'; }
     else if (i === current) { dot.classList.add('active'); dot.textContent = i; }
-    else { dot.textContent = i === 4 ? '✓' : i; }
+    else { dot.textContent = i === 5 ? '✓' : i; }
     if (line) line.classList.toggle('done', i < current);
   }
+}
+
+// ── Selección múltiple de equipos ──
+let equiposSeleccionados = [];
+function toggleMulti(el, valor) {
+  el.classList.toggle('selected');
+  if (equiposSeleccionados.includes(valor)) {
+    equiposSeleccionados = equiposSeleccionados.filter(v => v !== valor);
+  } else {
+    equiposSeleccionados.push(valor);
+  }
+  datos.equipo = equiposSeleccionados.join(', ');
+  document.getElementById('btn-step3').disabled = equiposSeleccionados.length === 0;
 }
 
 // ── Selección tipo negocio ──
@@ -1072,7 +1194,7 @@ const ciudadesSinCobertura = ['otra'];
 function checkCiudad(sel) {
   datos.ciudad = sel.value;
   ciudadCobertura = sel.value !== '' && !ciudadesSinCobertura.includes(sel.value);
-  document.getElementById('btn-step3').disabled = sel.value === '';
+  document.getElementById('btn-step4').disabled = sel.value === '';
 }
 
 // ── Validar paso 4 ──
@@ -1156,3 +1278,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
+
